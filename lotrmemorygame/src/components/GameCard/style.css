@@ -1,0 +1,6 @@
+.GameCard img {
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin: 5px;
+}

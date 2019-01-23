@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "name": "Aragon",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/b/b6/Aragorn_profile.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Gimli",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/e/ec/Gimli_-_FOTR.png"
+    },
+    {
+      "id": 3,
+      "name": "Legolas",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/3/33/Legolas_-_in_Two_Towers.PNG"
+    },
+    {
+      "id": 4,
+      "name": "Gandalf",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Frodo",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/5/54/Untitledjk.png"
+    },
+    {
+      "id": 6,
+      "name": "Samwise",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/2/20/Sam.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Bilbo",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/e/e9/Crazy_bilbo.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Merry",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/d/d8/Merry1.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Pippin",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/0/0a/Pippinprintscreen.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Boromir",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/b/b4/Seanbean_boromir.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Faramir",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/d/d7/Faramir_in_Two_Towers.png"
+    },
+    {
+      "id": 12,
+      "name": "Sauron",
+      "image": "https://vignette.wikia.nocookie.net/lotr/images/9/90/Sauron-2.jpg"
+    }
+  ]
+  
