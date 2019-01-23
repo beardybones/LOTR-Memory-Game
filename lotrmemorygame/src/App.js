@@ -23,6 +23,9 @@ removeCard = id => {
   this.setState({ score: this.state.score + 1});
 };
 
+updateTopScore = score => {
+  this.state.topscore < score ? this.setState({ topscore: score}): this.setState({ topscore: this.state.topscore})
+};
 
   render() {
     return (
