@@ -4,11 +4,16 @@ import "./style.css";
 class Nav extends React.Component {
     render() {
         return (
-            <nav class="navbar navbar-light bg-light">
+            <nav className="navbar">
                 <div className="score">
-                <span>Score:
-                    <span>{this.props.score}</span>
-                </span>
+                    <h1>Score:
+                        <span>{this.props.score}</span>
+                    </h1>
+                </div>
+                <div className="topscore">
+                    <h1>Top Score:
+                        <span>{this.props.topscore}</span>
+                    </h1>
                 </div>
             </nav>
         );

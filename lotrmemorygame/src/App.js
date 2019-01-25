@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Header from './components/Header';
 import GameCard from './components/GameCard';
 import Nav from './components/Nav';
@@ -12,43 +12,102 @@ class App extends Component {
 
   state = {
     cards: cards,
-    score: 0
+    score: 0,
+    topscore: 0,
+    shake: false,
+    gameover: ""
   };
 
-removeCard = id => {
-  // Filter this.state.pokemon for pokemon with an id not equal to the id being removed
-  const cards = this.state.cards.filter(friend => friend.id !== id);
-  // Set this.state.cards equal to the new cards array
-  this.setState({ cards });
-  this.setState({ score: this.state.score + 1});
-};
 
-updateTopScore = score => {
-  this.state.topscore < score ? this.setState({ topscore: score}): this.setState({ topscore: this.state.topscore})
-};
+  // getRandomId = (array) => {
+  //   const randomId = array[Math.floor(Math.random() * array.length)].id;
+  //   console.log(randomId);
+  // }
+
+  // removeCard = id => {
+  //   // Filter this.state.pokemon for pokemon with an id not equal to the id being removed
+  //   const cards = this.state.cards.filter(friend => friend.id !== id);
+  //   // Set this.state.cards equal to the new cards array
+  //   this.setState({ cards });
+  //   this.setState({ score: this.state.score + 1 });
+  // };
+
+  updateScore = id => {
+    const filtered = this.state.cards.filter(data => data.id === id);
+    if (filtered.length > 0) {
+      if (filtered[0].clicked) {
+        this.shakePicture();
+        this.setState({ gameover: "One Does Not Simply Walk Into Mordor!" });
+        this.updateTopScore(this.state.score);
+        this.newGame();
+      } else {
+        filtered[0].clicked = true;
+        this.setState({ score: this.state.score + 1 });
+        this.randomizeBoard();
+      }
+    }
+  }
+
+  updateTopScore = score => {
+    this.state.topscore < score ? this.setState({ topscore: score }) : this.setState({ topscore: this.state.topscore })
+  };
+
+  shakePicture() {
+    this.setState({ shake: !this.state.shake });
+    console.log("shake activated");
+
+  }
+
+  newGame() {
+    let cards = this.state.cards.map(data => {
+      data.clicked = false
+      return data;
+    })
+
+    
+    this.setState({ 
+      score: 0,
+      cards: cards,
+      gameover: "",
+    });
+    this.shakePicture();
+  }
+
+  randomizeBoard = (id) => {
+    let sourceArray = this.state.cards
+    for (let i = 0; i < sourceArray.length - 1; i++) {
+      let j = i + Math.floor(Math.random() * (sourceArray.length - i));
+      let temp = sourceArray[j];
+      sourceArray[j] = sourceArray[i];
+      sourceArray[i] = temp;
+    }
+    this.setState({ cards: sourceArray });
+  }
 
   render() {
     return (
-      <div>
-        <Nav 
-        score={this.state.score}
+      <div className="lotrcard">
+        <Nav
+          score={this.state.score}
+          topscore={this.state.topscore}
         />
-        <Header />
+        <Header Characters/>
         <Main>
-          <h1 className="title">Characters:</h1>
-          {this.state.cards.map(data =>{
-            return(
-              <GameCard
-                removeCard={this.removeCard}
-                key={data.key}
-                id={data.id}
-                name={data.name}
-                image={data.image}
-              />
-            )
-            })}
+            {this.state.cards.map(data => {
+              return (
+                <div>
+                  <GameCard
+                    key={data.id}
+                    id={data.id}
+                    name={data.name}
+                    image={data.image}
+                    updateScore={this.updateScore}
+                    shake={this.state.shake}
+                  />
+                </div>
+              )})}
         </Main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     )
   }

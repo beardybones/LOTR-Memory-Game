@@ -4,9 +4,9 @@ import "./style.css";
 class Header extends React.Component {
     render() {
         return (
-            <header class="header">
-                <h1>Memory Game!</h1>
-                <h2>Click on an image to earn points, but don't click on any more than once!</h2>
+            <header className="header">
+                <h1>The Quest for the One Ring</h1>
+                <h2>Click on the heroes to earn points, but don't click on any more than once!</h2>
             </header>
         );
     }

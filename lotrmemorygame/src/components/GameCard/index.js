@@ -4,8 +4,8 @@ import "./style.css";
 class GameCard extends React.Component {
     render() {
         return (
-            <div class="GameCard" onClick={() => this.props.removeCard(this.props.id)}>
-                <img alt={this.props.name} src={this.props.image} />
+            <div className="GameCard" onClick={() => this.props.updateScore(this.props.id)}>
+                <img className="responsive-img" alt={this.props.name} src={this.props.image} />
             </div>
         );
     }

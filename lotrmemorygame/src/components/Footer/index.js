@@ -4,8 +4,8 @@ import "./style.css";
 class Footer extends React.Component {
     render() {
         return (
-            <footer class="footer">
-                <div class="bottom">
+            <footer className="footer">
+                <div className="bottom">
                     Memory Game!
                 </div>
             </footer>
