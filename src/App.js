@@ -19,19 +19,6 @@ class App extends Component {
   };
 
 
-  // getRandomId = (array) => {
-  //   const randomId = array[Math.floor(Math.random() * array.length)].id;
-  //   console.log(randomId);
-  // }
-
-  // removeCard = id => {
-  //   // Filter this.state.pokemon for pokemon with an id not equal to the id being removed
-  //   const cards = this.state.cards.filter(friend => friend.id !== id);
-  //   // Set this.state.cards equal to the new cards array
-  //   this.setState({ cards });
-  //   this.setState({ score: this.state.score + 1 });
-  // };
-
   updateScore = id => {
     const filtered = this.state.cards.filter(data => data.id === id);
     if (filtered.length > 0) {
